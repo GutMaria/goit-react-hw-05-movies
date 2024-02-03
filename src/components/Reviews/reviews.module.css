@@ -1,0 +1,9 @@
+.reviewsList{
+  list-style: square;
+}
+
+.text{
+  font-size: 22px;
+  line-height: 1.5;
+  text-align: justify;
+}

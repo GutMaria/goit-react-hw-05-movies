@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import css from './movies-list.module.css'
+import css from './movies-list.module.css';
+import defaultPoster from '../../image/defaultPoster.jpg'
 
 const MoviesList = ({items}) => {
   const elements = items.map(({ id, title, poster_path }) => {
-    const imgUrl = 'https://image.tmdb.org/t/p/w500' + poster_path;
+    const imgUrl = poster_path ? ('https://image.tmdb.org/t/p/w500' + poster_path): defaultPoster;
 
   return (
     <li key={id} className={css.movieItem}>

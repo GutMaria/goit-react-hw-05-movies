@@ -14,3 +14,15 @@ export const getTrendingMovies = () => {
 export const getMovieDetails = id => {
   return instance.get(`/movie/${id}`);
 };
+
+export const getActors = id => {
+  return instance.get(`/movie/${id}/credits`);
+};
+
+export const getReviews = id => {
+  return instance.get(`/movie/${id}/reviews`);
+};
+
+export const searchMovie = search => {
+  return instance.get(`/search/movie?query=${search}`);
+};
