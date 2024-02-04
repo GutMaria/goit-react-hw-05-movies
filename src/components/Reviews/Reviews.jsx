@@ -30,7 +30,7 @@ const Reviews = () => {
   }, [id]);
 
   const reviewsItems = reviews.map(({ author, content, id }) => {
-    return (<li key={id}>
+    return (<li key={id} className={css.items}>
       <h3>Auhor: {author}</h3>
       <p className={css.text}>{ content}</p>
     
@@ -40,8 +40,8 @@ const Reviews = () => {
   return <>
     {loading && <p>...Loading</p>}
     {error && <p>Oops... something went wrong, try again!</p>}
-    {reviews.length ? <ul className={css.reviewsList}>{ reviewsItems}</ul> : <p>We don't have any reviews for this movie.</p>}
-  
+    {reviews.length>0 && !loading && !error && <ul className={css.reviewsList}>{ reviewsItems}</ul>}
+  {reviews.length === 0 && !loading && !error && <p>We don't have any reviews for this movie.</p>}
   </>
 }
 

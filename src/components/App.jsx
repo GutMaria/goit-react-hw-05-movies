@@ -10,13 +10,6 @@ const Cast = lazy(() => import("./Cast/Cast"));
 const Reviews = lazy(() => import("./Reviews/Reviews"));
 const MovieDetailsPage = lazy(() => import("../pages/MovieDetailsPage/MovieDetailsPage"));
 
-// import HomePage from "../pages/HomePage/HomePage"
-// import MoviesPage from "../pages/MoviesPage/MoviesPage"
-// import MoviesPage from "../pages/NotFoundPage/NotFoundPage"
-// import Cast from "./Cast/Cast";
-// import Reviews from "./Reviews/Reviews";
-// import MovieDetailsPage from "../pages/MovieDetailsPage/MovieDetailsPage"
-
 const App = () => {
   return (
       <Routes>

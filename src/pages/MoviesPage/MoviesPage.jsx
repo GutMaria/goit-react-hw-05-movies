@@ -22,7 +22,8 @@ const MoviesPage = () => {
             try {
                 setLoading(true);
               const { data } = await searchMovie(search);
-                setMovies(data.results)
+              setMovies(data.results);
+              setError(null)
             }
             catch (error) {
               setError(error.message);
@@ -44,11 +45,12 @@ const MoviesPage = () => {
 
 
   return <>
+    <SearchForm onSubmit={handleSearch} />
         {error && <p >Oops... something went wrong, try again!</p>}
             {loading && <p>...Loading</p>}
-    <SearchForm onSubmit={handleSearch} />
-    {movies.length ? <MoviesList items={movies}/> : <p>Nothing was found for your request</p>}
-
+    
+    {movies.length > 0 && !loading && !error && <MoviesList items={movies} />}
+    {search && movies.length===0 && !loading && !error && <p>Nothing was found for your request</p>}
   </>
 }
 

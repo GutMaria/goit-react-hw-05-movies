@@ -40,11 +40,10 @@ const genreList = movie.genres?.map((genre) => <li key={genre.id} className={css
 
 
   return (<>
+    <Link to={backLinkHref} className={css.goBackLink}>GO BACK</Link>
     {loading && <p>...Loading</p>}
     {error && <p>Oops... something went wrong, try again!</p>}
-    
-    <Link to={backLinkHref} className={css.goBackLink}>GO BACK</Link>
-    {movie && (<>
+    {movie && !loading && !error &&  (<>
     <div className={css.wrapper}>
         <img src={image} alt={movie.title} />
         <div className={css.details}>

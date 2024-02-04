@@ -1,5 +1,9 @@
 .reviewsList{
-  list-style: square;
+  list-style: none;
+}
+.items{
+border-top: 3px solid gray;
+padding-top: 10px;
 }
 
 .text{

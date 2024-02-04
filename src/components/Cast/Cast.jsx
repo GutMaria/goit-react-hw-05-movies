@@ -46,8 +46,10 @@ const Cast = () => {
   return (<>
   {loading && <p>...Loading</p>} 
     {error && <p>Oops... something went wrong, try again!</p>} 
-    {actors.length ? <ul className={css.actorList}>{ActorsList}</ul> : <p>We don't have any information about cast</p>}
+    {actors.length > 0 && !loading && !error && (<ul className={css.actorList}>{ActorsList}</ul>)}
+    {actors.length === 0 && !loading && !error && (<p>We don't have any information about cast</p>)}
   </>)
 }
 
 export default Cast;
+
