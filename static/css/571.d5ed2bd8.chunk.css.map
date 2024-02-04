@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/571.d5ed2bd8.chunk.css","mappings":"AAAA,6BACE,iBACF,CAEA,qBACE,cAAe,CACf,eAAgB,CAChB,kBACF","sources":["components/Reviews/reviews.module.css"],"sourcesContent":[".reviewsList{\n  list-style: square;\n}\n\n.text{\n  font-size: 22px;\n  line-height: 1.5;\n  text-align: justify;\n}"],"names":[],"sourceRoot":""}
