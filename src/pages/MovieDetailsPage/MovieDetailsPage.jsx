@@ -3,6 +3,7 @@ import { useState, useEffect, Suspense } from "react";
 import { useParams, Outlet, Link , useLocation } from "react-router-dom";
 import {getMovieDetails} from '../../apiServices/apiServices'
 import css from './movie-details-page.module.css';
+import defaultPoster from '../../image/defaultPoster.jpg'
 
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState({});
@@ -30,8 +31,7 @@ const MovieDetailsPage = () => {
   }, [id]);
   
 const genreList = movie.genres?.map((genre) => <li key={genre.id} className={css.text}>{genre.name}</li>);
-  const image = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
-
+const image = movie.poster_path ? ('https://image.tmdb.org/t/p/w500' + movie.poster_path): defaultPoster;
   // Для кнопки повернення назад:
   const location = useLocation();
     const backLinkHref = location.state?.from ?? "/";
