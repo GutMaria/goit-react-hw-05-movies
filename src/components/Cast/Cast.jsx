@@ -10,28 +10,25 @@ const Cast = () => {
   const [error, setError] = useState(null);
 
   const {id} = useParams();
-  
-  console.log(id);
 
   useEffect(() => {
         const fetchActors = async () => {
             try {
                 setLoading(true);
               const { data } = await getActors(id);
-                console.log(data);
-              setActors(data)
+              setActors(data.cast);
             }
             catch (error) {
               setError(error.message);
             } finally {
-                setLoading(false);
+              setLoading(false);
             }
         }
 
         fetchActors();
   }, [id]);
 
-  const ActorsList = actors.cast?.map(({ cast_id, character, name, profile_path }) => {
+  const ActorsList = actors?.map(({ cast_id, character, name, profile_path }) => {
 
     const photo = profile_path ? ('https://image.tmdb.org/t/p/w500' + profile_path) : defaultImg;
 ;
@@ -47,11 +44,9 @@ const Cast = () => {
 
 
   return (<>
-  {loading && <p>...Loading</p>}
-    {error && <p>Упс... щось пішло не так, спробуйте ще раз!</p>}
-    {actors && <ul className={css.actorList}>
-{ActorsList}
-      </ul>}
+  {loading && <p>...Loading</p>} 
+    {error && <p>Oops... something went wrong, try again!</p>} 
+    {actors.length ? <ul className={css.actorList}>{ActorsList}</ul> : <p>We don't have any information about cast</p>}
   </>)
 }
 

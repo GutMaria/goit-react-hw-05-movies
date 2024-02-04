@@ -26,8 +26,8 @@ const HomePage = () => {
 
   return (<div>
     {loading && <p>...Loading</p>}
-    {error && <p>Упс... щось пішло не так, спробуйте ще раз!</p>}
-    {movies && (<><h2>Trending movies today</h2> 
+    {error && <p >Oops... something went wrong, try again!</p>}
+    {movies && (<><h2 style={{textAlign: "center", fontSize: 30}}>Trending movies today </h2> 
     <MoviesList items={movies} /></>)}
   </div>)
 }

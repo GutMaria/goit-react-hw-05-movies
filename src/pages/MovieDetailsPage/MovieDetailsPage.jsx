@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+
+import { useState, useEffect, Suspense } from "react";
 import { useParams, Outlet, Link , useLocation } from "react-router-dom";
 import {getMovieDetails} from '../../apiServices/apiServices'
 import css from './movie-details-page.module.css';
@@ -40,7 +41,7 @@ const genreList = movie.genres?.map((genre) => <li key={genre.id} className={css
 
   return (<>
     {loading && <p>...Loading</p>}
-    {error && <p>Упс... щось пішло не так, спробуйте ще раз!</p>}
+    {error && <p>Oops... something went wrong, try again!</p>}
     
     <Link to={backLinkHref} className={css.goBackLink}>GO BACK</Link>
     {movie && (<>
@@ -66,7 +67,10 @@ const genreList = movie.genres?.map((genre) => <li key={genre.id} className={css
           </li>
         </ul>
       </div>
-      <Outlet/>
+      <Suspense fallback={<p>...Loading page</p>}>
+        <Outlet/>
+      </Suspense>
+      
     </>)}
     </>)
 }

@@ -17,7 +17,6 @@ const Reviews = () => {
             try {
                 setLoading(true);
               const { data } = await getReviews(id);
-              console.log(data.results);
               setReviews(data.results)
             }
             catch (error) {
@@ -40,7 +39,7 @@ const Reviews = () => {
 
   return <>
     {loading && <p>...Loading</p>}
-    {error && <p>Упс... щось пішло не так, спробуйте ще раз!</p>}
+    {error && <p>Oops... something went wrong, try again!</p>}
     {reviews.length ? <ul className={css.reviewsList}>{ reviewsItems}</ul> : <p>We don't have any reviews for this movie.</p>}
   
   </>
