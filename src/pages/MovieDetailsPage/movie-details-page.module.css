@@ -23,3 +23,24 @@ img{
   line-height: 1.5;
   color: black;
 }
+
+.goBackLink{
+  display: inline-block;
+  margin-bottom: 20px;
+  /* border: 1px solid rgb(171, 83, 179); */
+  background-color: rgb(179, 178, 178);
+  box-shadow: 0 4px 8px rgba(63, 62, 62, 0.5);
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+    border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+
+}
+
+.goBackLink:hover,
+.goBackLink:focus {
+  scale: 1.05;
+  background-color:rgb(171, 83, 179)
+}
