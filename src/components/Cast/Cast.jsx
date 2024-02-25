@@ -35,7 +35,7 @@ const Cast = () => {
     return <li key={cast_id} className={css.actorCard}>
       <img src={photo} alt={name} className={css.photo} />
       <div><h3>{name} </h3>
-      <p>Character: {character}</p></div>
+      <p className={css.character}>Character: {character}</p></div>
       
     </li>
   });

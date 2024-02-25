@@ -2,10 +2,12 @@
   display: flex;
   gap: 50px;
   margin-bottom: 40px;
+  flex-wrap: wrap;
 }
 
 .details{
   max-width: 1200px;
+  width: 100%;
 }
 
 h2,h3, h4, p, ul {
@@ -15,7 +17,7 @@ h2,h3, h4, p, ul {
 }
 
 img{
-  width: 400px;
+  /* width: 400px; */
 }
 
 .text{
