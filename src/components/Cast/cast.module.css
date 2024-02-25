@@ -1,15 +1,15 @@
 .actorList{
 display: flex;
 flex-wrap: wrap;
-gap: 40px;
+gap: 30px;
 padding: 0;
 }
 
 .actorCard{
 display: flex;
 gap: 20px;
-flex-wrap: wrap;
-width: 500px;
+/* flex-wrap: wrap; */
+width: 400px;
 min-height: 200px ;
 border: 1px solid gray;
 border-radius: 10px;
@@ -19,9 +19,30 @@ padding: 20px;
 
 .photo{
   width: 130px;
-  height: auto;
+  height: 200px;
+  /* height: auto; */
+}
+.actorCard>div {
+  flex-grow: 1;
 }
 
 .character{
   margin: 0;
+}
+
+@media (max-width: 600px) {
+  .actorCard {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .photo {
+    width: 100%;
+    height: auto;
+  }
+
+  .actorCard>div {
+    flex-grow: 0;
+    width: 100%;
+  }
 }
